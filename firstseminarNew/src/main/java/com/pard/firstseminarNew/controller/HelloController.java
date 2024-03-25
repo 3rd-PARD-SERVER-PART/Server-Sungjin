@@ -14,9 +14,8 @@ public class HelloController {
 
 }
 
-
 /*
-완성시킬 떄: ctrl + shift +enter
+완성시킬 떄: ctrl + shift + enter
 먼가 이상할 떄: alt + enter
 
  */
