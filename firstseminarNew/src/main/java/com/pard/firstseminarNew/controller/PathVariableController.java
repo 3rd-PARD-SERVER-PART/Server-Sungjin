@@ -19,6 +19,6 @@ public class PathVariableController {
 
     @RequestMapping("/pathV3/{name}/{age}")
     public String pathV3(@PathVariable String name, @PathVariable int age) {
-        return "PathVariable 다중 연습 \n name : " + name + ", age : " + age;
+        return "PathVariable 다중 연습 !! \n name : " + name + ", age : " + age;
     }
 }
