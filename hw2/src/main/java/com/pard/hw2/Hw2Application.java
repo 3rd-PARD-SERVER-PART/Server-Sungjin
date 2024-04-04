@@ -1,4 +1,4 @@
-package com.pard.hw2;
+package com.pard.HW2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

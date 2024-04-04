@@ -1,20 +1,19 @@
-package com.pard.hw2.Menu.Repository;
+package com.pard.HW2.Menu.Repository;
 
-import com.pard.hw2.Menu.Dto.MenuDto;
-import com.pard.hw2.Menu.Menu;
+import com.pard.HW2.Menu.DTO.MenuDTO;
+import com.pard.HW2.Menu.Menu;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Repository
 public class MenuRepository {
     private static final Map<Integer, Menu> menus = new HashMap<>();
 
     // CREATE
-    public void save(MenuDto menuDto){
+    public void save(MenuDTO menuDto){
         Menu menu = Menu.builder()
                 .menuId(menuDto.getMenuId())
                 .name(menuDto.getName())
@@ -26,34 +25,33 @@ public class MenuRepository {
     }
 
     // READ All
-    public List<MenuDto> findAll(){
+    public List<MenuDTO> findAll(){
         return menus.values().stream()
-                .map(menu -> MenuDto.builder()
+                .map(menu -> MenuDTO.builder()
                         .menuId(menu.getMenuId())
                         .name(menu.getName())
                         .price(menu.getPrice())
                         .category(menu.getCategory()) // 카테고리 추가
-                        .build())
-                .collect(Collectors.toList());
+                        .build()).toList();
     }
 
     // READ By Id
-    public MenuDto findById(Integer menuId) {
+    public MenuDTO findById(Integer menuId) {
         Menu menu = menus.get(menuId);
-        return MenuDto.builder()
+        return MenuDTO.builder()
                 .menuId(menu.getMenuId())
                 .name(menu.getName())
                 .price(menu.getPrice())
-                .category(menu.getCategory()) // 카테고리 추가
+                .category(menu.getCategory())
                 .build();
     }
 
     // UPDATE
-    public void update(Integer menuId, MenuDto menuDto){
+    public void update(Integer menuId, MenuDTO menuDto){
         Menu menu = menus.get(menuId);
         menu.setName(menuDto.getName());
         menu.setPrice(menuDto.getPrice());
-        menu.setCategory(menuDto.getCategory()); // 카테고리 추가
+        menu.setCategory(menuDto.getCategory());
     }
 
     // DELETE

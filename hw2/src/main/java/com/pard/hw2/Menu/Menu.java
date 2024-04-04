@@ -1,4 +1,4 @@
-package com.pard.hw2.Menu;
+package com.pard.HW2.Menu;
 
 import lombok.*;
 

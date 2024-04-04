@@ -1,7 +1,7 @@
-package com.pard.hw2.Menu.Service;
+package com.pard.HW2.Menu.Service;
 
-import com.pard.hw2.Menu.Dto.MenuDto;
-import com.pard.hw2.Menu.Repository.MenuRepository;
+import com.pard.HW2.Menu.DTO.MenuDTO;
+import com.pard.HW2.Menu.Repository.MenuRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,19 +13,19 @@ public class MenuService {
 
     private final MenuRepository menuRepository;
 
-    public void saveMenu(MenuDto menuDto){
+    public void saveMenu(MenuDTO menuDto){
         menuRepository.save(menuDto);
     }
 
-    public List<MenuDto> findAllMenus(){
+    public List<MenuDTO> findAllMenus(){
         return menuRepository.findAll();
     }
 
-    public MenuDto findMenuById(Integer menuId){
+    public MenuDTO findMenuById(Integer menuId){
         return menuRepository.findById(menuId);
     }
 
-    public void updateMenu(Integer menuId, MenuDto menuDto){
+    public void updateMenu(Integer menuId, MenuDTO menuDto){
         menuRepository.update(menuId, menuDto);
     }
 

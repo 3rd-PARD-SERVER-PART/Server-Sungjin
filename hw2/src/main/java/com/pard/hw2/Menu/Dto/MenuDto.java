@@ -1,4 +1,4 @@
-package com.pard.hw2.Menu.Dto;
+package com.pard.HW2.Menu.DTO;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MenuDto {
+public class MenuDTO {
     private Integer menuId;
     private String name;
     private int price;

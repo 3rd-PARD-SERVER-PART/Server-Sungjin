@@ -1,4 +1,4 @@
-package com.pard.hw2;
+package com.pard.HW2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
