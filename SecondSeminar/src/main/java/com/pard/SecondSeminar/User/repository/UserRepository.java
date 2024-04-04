@@ -9,8 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static java.util.stream.Collectors.toList;
-
 @Repository
 public class UserRepository {
     private static final Map<Integer, User> handong = new HashMap<>();
@@ -34,14 +32,23 @@ public class UserRepository {
     }
 
     public List<UserDto> findAll(){
-        return handong.values().stream()
+        return handong.values().stream() // handong 맵의 값들을 스트림으로 변환합니다. 이 스트림은 맵에 있는 모든 사용자 객체를 포함한다.
                 .map(user -> UserDto.builder()
                     .studentId(user.getStudentId())
                     .studentName(user.getStudentName())
                     .build()).toList();
     }
 
-//    List<UserDTO> userDtos = new ArrayList<>();
+//    public List<UserDto> findAll(){
+//        return handong.values().stream()
+//                .map(user -> UserDto.builder()
+//                        .studentId(user.getStudentId())
+//                        .studentName(user.getStudentName())
+//                        .build())
+//                .collect(Collectors.toList());
+//    }
+
+//    public List<UserDTO> userDtos = new ArrayList<>();
 //        for (User user : handong.values()) {
 //        UserDTO userDto = UserDTO.builder()
 //                .studentId(user.getStudentId())
@@ -50,6 +57,7 @@ public class UserRepository {
 //        userDtos.add(userDto);
 //    }
 //        return userDtos;
+
 
 
     //UPDATE
