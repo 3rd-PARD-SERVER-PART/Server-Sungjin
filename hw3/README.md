@@ -30,12 +30,12 @@
 
   <br>
 
-- ![findByPriceRange.png](../..//findByPriceRange.png) **findByPriceRange()**: 가격 범위 내의 리소스를 찾습니다.
+- ![findByPriceRange.png](../..//findByPriceRange.png) **findByPriceRange()**: 가격 범위 내의 데이터 조회.
 
   <br>
 
-- ![findByCategory.png](../..//findByCategory.png) **findByCategory()**: 카테고리별 리소스를 찾습니다.
+- ![findByCategory.png](../..//findByCategory.png) **findByCategory()**: 카테고리별 데이터 조회.
 
   <br>
 
-- ![findByRatingRange.png](../..//findByRatingRange.png) **findByRatingRange()**: 평점 범위 내의 리소스를 찾습니다.
+- ![findByRatingRange.png](../..//findByRatingRange.png) **findByRatingRange()**: 평점 범위 내의 데이터 조회.
