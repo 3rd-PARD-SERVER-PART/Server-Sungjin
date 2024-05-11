@@ -58,6 +58,17 @@ public class MemberService {
 
     */
 
+//    public void update(Long id, MemberCreateDTO dto){
+//        Member member = memberRepo.findById(id).orElseThrow();
+//        memberRepo.save(member);
+//    }
+
+    public void update(Long id, MemberReadDTO dto){
+        Member member = memberRepo.findById(id).orElseThrow();
+        member.update(dto);
+        memberRepo.save(member);
+    }
+
     public void deleteById(Long id) {
         memberRepo.deleteById(id);
     }

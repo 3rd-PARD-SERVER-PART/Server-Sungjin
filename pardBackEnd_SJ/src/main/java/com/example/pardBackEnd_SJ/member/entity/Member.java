@@ -1,6 +1,7 @@
 package com.example.pardBackEnd_SJ.member.entity;
 
 import com.example.pardBackEnd_SJ.member.dto.MemberCreateDTO;
+import com.example.pardBackEnd_SJ.member.dto.MemberReadDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,5 +34,11 @@ public class Member {
                 .part(dto.getPart())
                 .name(dto.getName())
                 .build();
+    }
+
+    public void update(MemberReadDTO dto){
+        this.name = dto.getName();
+        this.part = dto.getPart();
+        this.age = dto.getAge();
     }
 }

@@ -12,6 +12,9 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/pard")
+//@CrossOrigin(origins= "*") // 아주 안 좋은 방식, 세션? 그곳에 개인 정보가 다 들어있기 때문에 "*"는 안됨
+//@CrossOrigin(origins= {"http://localhost:3000", "http://localhost:3001"}, allowCredentials = "true")
+// 위에꺼 대신 CorsConfig.java 사용
 public class MemberController {
     private final MemberService memberService;
 
@@ -36,6 +39,18 @@ public class MemberController {
     // http://localhost:8080/pard/1
     public MemberReadDTO findById(@PathVariable Long id) { // 주어진 ID에 해당하는 멤버를 조회
         return memberService.findById(id); // 해당 멤버가 존재하면 -> 해당 멤버의 정보를 반환
+    }
+
+//    @PatchMapping("api/blogs/{id}")
+//    public Long update2(@PathVariable Long id, @RequestBody BlogRequestDto requestDto) throws SQLException {
+//
+//        return blogService.patchUpdate(id, requestDto);
+//    }
+
+    @PatchMapping("/{id}")
+    public String updateById(@PathVariable Long id, @RequestBody MemberReadDTO dto) {
+        memberService.update(id, dto);
+        return "수정됨";
     }
 
     @DeleteMapping("/{id}")
