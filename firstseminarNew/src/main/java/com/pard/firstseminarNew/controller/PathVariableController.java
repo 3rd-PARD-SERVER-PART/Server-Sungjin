@@ -7,10 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PathVariableController {
 
-    @RequestMapping("/pathV1/{name}")
-    public String pathV1(@PathVariable("name") String userName) {
+    @RequestMapping("/pathV1/{names}")
+    public String pathV1(@PathVariable("names") String userName) {
         return "PathVariable 연습 name : " + userName;
     }
+
+    @RequestMapping("pathV1/{name}/{age}")
+    public String pathV1(@PathVariable String name, @PathVariable int age){
+        return "name: " + name + " , age: " + age;
+    }
+
+
+
 
     @RequestMapping("/pathV2/{name}")
     public String pathV2(@PathVariable String name) {

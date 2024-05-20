@@ -22,17 +22,17 @@ public class RequestParamController {
         return "requestParamV2 연습 name : " + name + " age : " + age;
     }
     @RequestMapping("/v3")
-    public String requestParamV3(
-            String name,
-            int age) {
+    public String requestParamV3(String name, int age) {
         return "requestParamV3 연습 name : " + name + " age : " + age;
     }
+
     @RequestMapping("/v4")
     public String requestParamV4(
             @RequestParam(required = true) String name,
-            @RequestParam(required = false) Integer age) {
+            @RequestParam(required = false, defaultValue = "25") Integer age) {
         return "requestParamV4 연습 name : " + name + " age : " + age;
     }
+
     @RequestMapping("/default")
     public String requestParamDefault(
             @RequestParam(defaultValue = "guest") String name,
@@ -42,9 +42,10 @@ public class RequestParamController {
 
         return "requestParamV5 연습 name : " + name + " age : " + age;
     }
+
     @RequestMapping("/map")
     public String requestParamMap(@RequestParam Map<String, Object> paramMap) {
-        return "requestParamV6 연습 name : " + paramMap.get("name") + " age : " + paramMap.get("age");
+        return "requestParamV6 연습 name : " + paramMap.get("names") + ", age : " + paramMap.get("age");
     }
 }
 

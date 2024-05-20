@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HiController {
     @RequestMapping("/hi")
     public String hi() {
-        return "hello.html";
+        return "hello.html"; // 데이터 자체를 반환 -> 데이터를 넘기는 벡엔드(API서버)에 특화됨
     }
 }

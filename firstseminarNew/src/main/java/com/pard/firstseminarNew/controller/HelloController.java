@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
     @RequestMapping("/hello")
     public String hello() {
-        return "hello.html";
+        return "hello.html"; // 화면(html 코드)을 반환
     }
 }
 
